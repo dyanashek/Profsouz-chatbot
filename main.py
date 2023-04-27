@@ -139,7 +139,7 @@ def callback_query(call):
                     
                     # if there is a document we need to send
                     elif answer.document != '':
-                        with open(f'{answer.document}.docx', "rb") as f:
+                        with open(f'static/{answer.document}.docx', "rb") as f:
                             file_data = f.read()
 
                         bot.edit_message_text(chat_id=chat_id, 
@@ -213,7 +213,7 @@ def callback_query(call):
     
     # sending document, when the 'send document' button hitted
     elif 'document' in call.data:
-        with open(f'{config.document_name}.docx', "rb") as f:
+        with open(f'static/{config.document_name}.docx', "rb") as f:
             file_data = f.read()
         bot.send_document(chat_id=chat_id, 
                           document=file_data, 
