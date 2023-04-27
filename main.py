@@ -56,8 +56,7 @@ for answer in questions_data.answers:
 
 @bot.message_handler(commands=['start'])
 def start_message(message): 
-    start_text = config.START_MESSAGE
-    bot.send_message(message.chat.id, start_text, reply_markup=topic_markup(topics))
+    bot.send_message(message.chat.id, config.START_MESSAGE, reply_markup=topic_markup(topics))
 
 @bot.callback_query_handler(func = lambda call: True)
 def callback_query(call):
