@@ -1,47 +1,54 @@
-# Profsouz-chatbot
-A simple chat bot, which answers questions from database, provides links and sends files.
+# Question-answer telegram bot
+## Change language: [English](README.en.md)
+***
+Простой чат-бот, который отвечает на вопросы из базы данных, предоставляет ссылки и отправляет файлы.
 
-## Commands:
-- question (ask a new question - displays the start markup)
+## Команды:
+- вопрос (задать новый вопрос - отображает стартовую разметку)
 
-## Installation:
-- create and activate a virtual environment:
+## Установка и использование:
+- при замене файлов в папке static сохранять их наименования и расширения
+- создать и активировать виртуальную среду:
 ```sh
 python3 -m venv venv
 source venv/bin/activate # for mac
 source venv/Scripts/activate # for windows
 ```
-- install dependencies:
+- установить зависимости:
 ```sh
 pip install -r requirements.txt
 ```
-- create .env file
-- set environment's variables _(in .env)_:
-**TELEBOT_TOKEN** - telegram API's key
+- запустить проект:
+```sh
+python3 main.py
+```
+- создать файл .env
+- установить переменные окружения _(в .env)_:
+**TELEBOT_TOKEN** - ключ API Telegram
 
-## To add additional topics, subtopics, questions and answers:
-**Edit questions_data.py file**
+## Чтобы добавить дополнительные темы, подтемы, вопросы и ответы:
+**Редактировать файл questions_data.py**
 
-**1. In topics tuples:**
-- First element - topic's number
-- Second element - topic's title
+**1. В кортеже темы:**
+- Первый элемент - номер темы
+- Второй элемент - название темы
 
-**2. In subtopics tuples:**
-- First element - topic's number
-- Second element - subtopic's number
-- Third element - subtopic's title
+**2. В кортеже подтемы:**
+- Первый элемент - номер темы
+- Второй элемент - номер подтемы
+- Третий элемент - название подтемы
 
-**3. In questions tuples:**
-- First element - topic's number
-- Second element - subtopic's number
-- Third element - question's number
-- Fourth element - question
+**3. Кортеж вопроса:**
+- Первый элемент - номер темы
+- Второй элемент - номер подтемы
+- Третий элемент - номер вопроса
+- Четвертый элемент - вопрос
 
-**4. In answers tuples:**
-- First element - topic's number
-- Second element - subtopic's number
-- Third element - question's number
-- Fourth element - a link if required _(if there is a link - a link button will be added to an answer)_
-- Fifth element - answer's text _(could be empty, will provide text from **config.py** if not filled)_
-- Sixth element - document's name, wich should be send _(could be empty, if filled - sends document without text providing)_
-- Seventh element - a list, wich contains topic and subtopic numbers, where user should be redirect after asking a question _(could be empty)_
+**4. В кортеже ответа:**
+- Первый элемент - номер темы
+- Второй элемент - номер подтемы
+- Третий элемент - номер вопроса
+- Четвертый элемент - ссылка, если требуется _(если есть ссылка - к ответу будет добавлена кнопка ссылки)_
+- Пятый элемент - текст ответа _(может быть пустым, будет предоставлен текст из **config.py**, если он не заполнен)_
+- Шестой элемент - название документа, который нужно отправить _(может быть пустым, если заполнено - отправляет документ без предоставления текста)_
+- Седьмой элемент - список, содержащий номера тем и подтем, куда следует перенаправить пользователя после того, как он задаст вопрос _(может быть пустым)_
