@@ -2,7 +2,7 @@
 ## Изменить язык: [Русский](README.md)
 ***
 A simple chat bot, which answers questions from database, provides links and sends files.
-
+## [DEMO](README.demo.md)
 ## Commands:
 - question (ask a new question - displays the start markup)
 
